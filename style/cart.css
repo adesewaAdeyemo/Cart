@@ -1,0 +1,68 @@
+*{
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Fuzzy Bubbles', cursive;
+}
+body form .navbar{
+    background-color: rgb(36, 22, 3);
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%
+}
+nav .nav-item .nav-link{
+    color: #fff;
+}
+nav img{
+    height: 40px;
+    margin-left: 1rem;
+}
+.logo h1{
+    display: inline;
+    color: #fff;
+    padding:0 0 0 1rem;
+    margin-left: -1rem;
+}
+.logo .add{
+    color: #fff;
+    border:solid burlywood;
+    border-radius: 50%;
+    margin-left: -6%;
+}
+nav .logo button{
+    background-color: rgb(36, 22, 3);;
+    border: none;
+}
+nav .logo h1{
+    border-bottom: 2px solid rgb(240, 148, 29);
+}
+.container{
+    margin:3rem 10% 0;
+    width: 80%;
+}
+.bread{
+    text-align: center;
+    box-shadow: 2px 1px 3px  ;
+    /* margin-top: 10px; */
+}
+.bread img{
+    width: 250px;
+    height: 300px;
+}
+.bread p{
+    margin: -3% 0 0;
+    color: rgb(107, 62, 3);
+}
+nav span .btn{
+    background-color: burlywood;
+    margin-right: 5%;
+}
+nav .btn:hover{
+    color: #fff;
+    background-color: rgb(102, 80, 50);
+}
+.container .d-flex input{
+    padding: 5px;
+    background-color: burlywood;
+}

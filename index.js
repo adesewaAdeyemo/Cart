@@ -76,7 +76,7 @@ form.addEventListener('submit', logSubmit);
 //     }).then((result) => {
 //         console.log('sucess!', result);
 //     }).catch((status) => {
-//         console.log(status);
+//         console.log(status);v
 //     });
 
 //     const url = prompt("Enter a URL :");
