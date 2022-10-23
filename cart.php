@@ -152,32 +152,60 @@
         $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
     }elseif(isset($_POST['chicken'])){
         $_key= 6;
+        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
     }elseif(isset($_POST['sadien'])){
         $_key= 7;
+        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
     }elseif(isset($_POST['sacarra'])){
         $_key= 8;
+        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
     }elseif(isset($_POST['chocolate'])){
         $_key= 9;
+        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
     }elseif(isset($_POST['wheat'])){
         $_key= 10;
+        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
     }elseif(isset($_POST['olive'])){
         $_key= 11;
+        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
     }elseif(isset($_POST['pineapple'])){
         $_key= 12;
+        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
     }elseif(isset($_POST['rainbow'])){
         $_key= 13;
+        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
     }elseif(isset($_POST['apple'])){
         $_key= 14;
+        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
     }elseif(isset($_POST['peanut'])){
         $_key= 15;
+        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
     }elseif(isset($_POST['hot'])){
         $_key= 16;
+        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
     }elseif(isset($_POST['vanilla'])){
         $_key= 17;
+        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
     }elseif(isset($_POST['weed'])){
         $_key= 18;
+        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
     }else{
         $_key= 19;
+        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
     }
 
     // $call = $_SESSION['key'];
@@ -185,7 +213,14 @@
         $_SESSION['count'] += 1;
     }
     $_SESSION['selected'] = array($_SESSION['product'] => $_SESSION['productPrice']);
-    // $_SESSION['product'] =  $_SESSION['selected'][$_SESSION['bread'][$_key]['name']];
+    $_SESSION["cart"] =array_merge($_SESSION["cart"], $_SESSION["selected"]);   
+
+
+    // if(!empty($_SESSION["bread"])) {
+	// 	foreach($_SESSION["bread"] as $bread => $price) {
+    //         echo $bread => $price;
+    //     }
+                // $_SESSION['product'] =  $_SESSION['selected'][$_SESSION['bread'][$_key]['name']];
     // $_SESSION['key'] = $_key;
 
     // do{
@@ -229,7 +264,7 @@
                 <div class="logo">
                     <img src="images/e.png" alt=""><h1>Chef</h1>
                     <button type='submit' name='submit'><img src="images/grocery-cart.png" alt=""></button>
-                    <span class="add"><?php echo (count($_SESSION['selected'])); ?></span>
+                    <span class="add"><?php echo (count($_SESSION['cart'])); ?></span>
                 </div>
             <ul class="navbar-nav">
                 <li class="nav-item">

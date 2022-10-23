@@ -11,6 +11,8 @@ body form .navbar{
     z-index: 1;
     width: 100%
 }
+.navbar{
+        background-color: rgb(36, 22, 3);}
 nav .nav-item .nav-link{
     color: #fff;
 }
@@ -64,5 +66,9 @@ nav .btn:hover{
 }
 .container .d-flex input{
     padding: 5px;
+    background-color: burlywood;
+}
+.container table{
+    text-align: left;
     background-color: burlywood;
 }
