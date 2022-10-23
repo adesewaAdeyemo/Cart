@@ -40,7 +40,7 @@ nav .logo h1{
     border-bottom: 2px solid rgb(240, 148, 29);
 }
 .container{
-    margin:3rem 10% 0;
+    margin:8rem 10% 0;
     width: 80%;
 }
 .bread{
@@ -71,4 +71,17 @@ nav .btn:hover{
 .container table{
     text-align: left;
     background-color: burlywood;
+}
+.container .car button{
+    background-color: burlywood;
+    border: 1px solid rgb(117, 72, 14);
+    width: 200px;    
+}
+.container .car{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.container .car button:hover{
+    background-color: #fff;
 }
