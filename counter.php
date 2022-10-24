@@ -52,8 +52,8 @@
                 <form method='POST' action='counter.php'>
                 <table class="card bread">
                     <tr>
-                        <td><b>Items</b></td>
-                        <td><b>Price</b></td>
+                        <td>Items</td>
+                        <td>Price</td>
                         <td></td>
                         <td></td>
                     </tr>
@@ -64,45 +64,42 @@
                     // echo "<pre>";
                     $_total = 0;
                 if(!empty($_SESSION["cart"])) {
-                            foreach ($_SESSION["cart"] as $key => $value) {
-                                // function add(){
-                                //     $_SESSION['qtty'] += 1;
+                            foreach ($_SESSION["cart"] as $key => $_val) {
+                                $_SESSION['val'] = $_val[1];
+                                // function addcart(){
+                                //     $_SESSION['val'] += 1;
                                 // }
                                 // function remove(){
-                                //     $_qtty -= 1;
+                                //     $_SESSION['val'] -= 1;
                                 // }
-                
-                                echo '<tr><td>' . $key . '</td><td>' . $value . '</td><td>' . $_SESSION['qtty'] . '</td><td><input type="submit" name="remove" value="-"></td><td><input type="submit" name="add" value="+"></td></tr>';
+                                if ($_SESSION['bread'][0]['quantity'] > $_val[1]){
+                                if (isset(($_POST['remove']))){
+                                    $_val[1] -= 1;
+                                }elseif (isset(($_POST['add']))){
+                                    $_val[1] += 1;
+                                }}
+                                echo '<tr><td>' . $key . '</td><td>' . $_val[0] . '</td><td>' . $_val[1] . '</td><td><input type="submit" name="remove" value="-"></td><td><input type="submit" name="add" value="+"></td></tr>';
                                 echo "\n";
-                                $_total += $value;
-                                
+                                $_total += $_val[0];
                             }
-                    }
-                    if (isset(($_POST['remove']))){
-                        $_SESSION['qtty'] -= 1;
-                    }elseif (isset(($_POST['add']))){
-                        $_SESSION['qtty'] += 1;;
-                    }
+                        }
 
-                // if(!empty($_SESSION["bread"])) {
-                // 	foreach($_SESSION["bread"] as $bread => $price) {
-                //         echo $bread. " " .$price;
-                //         echo '<tr><td>' . $bread . '</td><td>' . $_SESSION["bread"][$bread] . '</td></tr>';
-                //         echo $_SESSION["bread"][$bread];
-                //     }
-                // }
-                // echo $_SESSION['product'];
-                // echo $_SESSION['productPrice'];
-                // print_r($array($_SESSION));
                 // session_destroy();
                     ?>
                     <tr class='card-text'>
-                        <td><b>Total</b></td>
-                        <td><b><?php echo $_total ?></b></td>
+                        <td>Total</td>
+                        <td><?php echo $_total ?></td>
                 </tr>
                 </table>
 
                 </form>
+                <?php
+                    // if (isset(($_POST['remove']))){
+                    //     $_SESSION['val'] -= 1;
+                    // }elseif (isset(($_POST['add']))){
+                    //     $_SESSION['val'] += 1;
+                    // }
+                ?>
                 <div class="car">
                 <a href='cart.php'><button type='submit'>Continue shopping</button></a><br>
                 <a href='counter.php'><button type='submit'>Checkout</button></a>

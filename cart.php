@@ -149,7 +149,7 @@
         'name' => 'Bun Bread',
         'price' => '850',
         'quantity' => '10',
-        'supply' => '1'
+        'supply' => '2'
         ],
         [
             'name' => 'Package',
@@ -278,12 +278,17 @@
     function increment(){
         $_SESSION['count'] += 1;
     }
-    $_SESSION['selected'] = array($_SESSION['product'] => $_SESSION['productPrice']);
+    // $_SESSION['selected'] = array($_SESSION['product'], $_SESSION['productPrice'], $_SESSION['qtty']);
+    $_SESSION['selected'] = array($_SESSION['product'] => array($_SESSION['productPrice'], $_SESSION['qtty']));
     // $_SESSION['selected'] = array($_SESSION['selecteed'] => $_SESSION['qtty']);
-    // $_SESSION["cart"] = array ();
-    
-    $_SESSION["cart"] = array_merge($_SESSION["cart"], $_SESSION["selected"]);
-       
+    // $_SESSION["cart"] = array ();   
+    // foreach ($_SESSION['selected'] as $array) {
+    //     $_SESSION["cart"] = array_merge($_SESSION['cart'], $_SESSION["selected"]);
+    //      }
+    $_SESSION["cart"] = array_merge($_SESSION['cart'], $_SESSION["selected"]);
+    // $_SESSION["cart"] = array_push($_SESSION['cart'], $_SESSION["selected"]);
+
+    // $_SESSION["selected"] = array_merge($_SESSION['cart'], $_SESSION["selected"]);
 
 
     // if(!empty($_SESSION["bread"])) {
@@ -335,6 +340,7 @@
                     <img src="images/e.png" alt=""><h1>Chef</h1>
                     <button type='submit' name='submit'><img src="images/grocery-cart.png" alt=""></button>
                     <span class="add"><?php echo (count($_SESSION['cart'])); ?></span>
+                    <!-- <span class="add"><?php echo ((count($_SESSION['selected'])/3)-1); ?></span> -->
                 </div>
             <ul class="navbar-nav">
                 <li class="nav-item">

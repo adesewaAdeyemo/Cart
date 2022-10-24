@@ -72,10 +72,13 @@ nav .btn:hover{
     text-align: left;
     background-color: burlywood;
 }
-.container .car button{
+.car a button{
+    width: 200px;
     background-color: burlywood;
+    border-radius: 4px;
+    padding: 5px 0;
     border: 1px solid rgb(117, 72, 14);
-    width: 200px;    
+    text-decoration: none;
 }
 .container .car{
     display: flex;
