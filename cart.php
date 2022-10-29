@@ -1,13 +1,12 @@
 <?php
     session_start();
-    // echo "Shop with us". $_SESSION["email"];
 
     class product {
         public $item;
         function __construct($item){
             $this->item = $item;
         }
-        function add(){
+        function addbnb(){
             return $this->item;
         }
     }
@@ -19,7 +18,7 @@
             'supply' => '1'
         ],
         [
-            'name' => 'Browny',
+            'name' => 'Browny Bread',
             'price' => '1500',
             'quantity' => '10',
             'supply' => '1'
@@ -274,14 +273,14 @@
         $_SESSION['qtty'] = $_SESSION['bread'][$_key]['supply'];
     }
 
-    // $call = $_SESSION['key'];
     function increment(){
         $_SESSION['count'] += 1;
     }
     // $_SESSION['selected'] = array($_SESSION['product'], $_SESSION['productPrice'], $_SESSION['qtty']);
     $_SESSION['selected'] = array($_SESSION['product'] => array($_SESSION['productPrice'], $_SESSION['qtty']));
     // $_SESSION['selected'] = array($_SESSION['selecteed'] => $_SESSION['qtty']);
-    // $_SESSION["cart"] = array ();   
+    // $_SESSION["cart"] = array();
+    // unset($_SESSION["cart"]);
     // foreach ($_SESSION['selected'] as $array) {
     //     $_SESSION["cart"] = array_merge($_SESSION['cart'], $_SESSION["selected"]);
     //      }
@@ -333,7 +332,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <form action="cart.php" method="POST">
+    <form action="cart.php" method="POST" onsubmit="preventDefault()">
         <nav class="navbar navbar-expand-sm">
             <div class="container-fluid">
                 <div class="logo">
@@ -497,5 +496,6 @@
 
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script src='cart.js'></script>
 </body>
 </html>

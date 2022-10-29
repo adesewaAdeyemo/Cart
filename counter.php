@@ -48,6 +48,10 @@
                 // echo count($_SESSION['selected']);
                     // print_r($_SESSION["selected"]);
                     // echo json_encode($_SESSION["selected"]);
+                    // echo "<pre>";
+                    // print_r($_SESSION["cart"]);
+                    // echo "<pre>";
+
                     ?>
                 <form method='POST' action='counter.php'>
                 <table class="card bread">
@@ -59,26 +63,11 @@
                     </tr>
                 
                     <?php
-                    // echo "<pre>";
-                    // print_r($_SESSION["cart"]);
-                    // echo "<pre>";
                     $_total = 0;
                 if(!empty($_SESSION["cart"])) {
                             foreach ($_SESSION["cart"] as $key => $_val) {
                                 $_SESSION['val'] = $_val[1];
-                                // function addcart(){
-                                //     $_SESSION['val'] += 1;
-                                // }
-                                // function remove(){
-                                //     $_SESSION['val'] -= 1;
-                                // }
-                                if ($_SESSION['bread'][0]['quantity'] > $_val[1]){
-                                if (isset(($_POST['remove']))){
-                                    $_val[1] -= 1;
-                                }elseif (isset(($_POST['add']))){
-                                    $_val[1] += 1;
-                                }}
-                                echo '<tr><td>' . $key . '</td><td>' . $_val[0] . '</td><td>' . $_val[1] . '</td><td><input type="submit" name="remove" value="-"></td><td><input type="submit" name="add" value="+"></td></tr>';
+                                echo '<tr><td>' . $key . '</td><td>' . $_val[0] . '</td><td>' . $_SESSION['val'] . '</td><td><input type="submit" name="remove" value="-"></td><td><input type="submit" name="add" value="+"></td></tr>';
                                 echo "\n";
                                 $_total += $_val[0];
                             }
@@ -91,14 +80,26 @@
                         <td><?php echo $_total ?></td>
                 </tr>
                 </table>
-
                 </form>
                 <?php
-                    // if (isset(($_POST['remove']))){
-                    //     $_SESSION['val'] -= 1;
-                    // }elseif (isset(($_POST['add']))){
-                    //     $_SESSION['val'] += 1;
+                    // if ($_SESSION['bread'][0]['quantity'] > $_val[1]){
+                        // function add(){
+                        //     $_SESSION['val'] += 1;
+                        // }
+                        // function remove(){
+                        //     $_SESSION['val'] -= 1;
+                        // }
+                    if (isset(($_POST['remove']))){
+                        $_SESSION['val'] -= 1;
+                        // remove();
+                    }elseif (isset(($_POST['add']))){
+                        $_SESSION['val'] += 1;}
+                        // add();
+                    // }else{
+                    //     $_SESSION['val'] = $_SESSION['val'];
                     // }
+                // }
+                // session_destroy();
                 ?>
                 <div class="car">
                 <a href='cart.php'><button type='submit'>Continue shopping</button></a><br>
@@ -106,11 +107,8 @@
                 </div>
 
         </div>
-        <!-- <div class="car">
-                <input type="submit" name='checkout' value='Check Out'>
-                <input type="submit" name='continue' value='Continue Shopping'>
-                <input type="submit" name='save' value='Save for later'>
-        </div> -->
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script src='cart.js'></script>
 </body>
 </html>
