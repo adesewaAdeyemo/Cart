@@ -56,15 +56,14 @@
                 <form method='POST' action='counter.php'>
                 <table class="card bread">
                     <tr>
-                        <td>Items</td>
-                        <td>Price</td>
-                        <td></td>
+                        <td><b>Items<b></td>
+                        <td><b>Price<b></td>
+                        <td><b>quantity<b></td>
                         <td></td>
                     </tr>
-                
                     <?php
-                    $_total = 0;
-                if(!empty($_SESSION["cart"])) {
+                        $_total = 0;
+                        if(!empty($_SESSION["cart"])) {
                             foreach ($_SESSION["cart"] as $key => $_val) {
                                 $_SESSION['val'] = $_val[1];
                                 echo '<tr><td>' . $key . '</td><td>' . $_val[0] . '</td><td>' . $_SESSION['val'] . '</td><td><input type="submit" name="remove" value="-"></td><td><input type="submit" name="add" value="+"></td></tr>';
@@ -72,13 +71,12 @@
                                 $_total += $_val[0];
                             }
                         }
-
-                // session_destroy();
+                        session_destroy();
                     ?>
                     <tr class='card-text'>
                         <td>Total</td>
                         <td><?php echo $_total ?></td>
-                </tr>
+                    </tr>
                 </table>
                 </form>
                 <?php

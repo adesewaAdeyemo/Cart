@@ -10,38 +10,59 @@
     
         <table class="card reggae">
             <tr>
-                <td>Song id</td>
-                <td>Song name</td>
-                <td>Artist</td>
-                <td>Rating</td>
+                <td>product id</td>
+                <td>product name</td>
+                <td>Price</td>
+                <td>quantity</td>
             </tr>
 <?php
+session_start();
 $conn = mysqli_connect('localhost', 'root', '', 'songs');
 if (!$conn){
     echo 'connection error '. mysqli_connect_error();
 }else{
     echo 'connect successfully!';
 }
-$sql = 'SELECT * FROM reggae';
+// $num = $_SESSION['key'];
+if (isset($_POST)){
+$num = $_SESSION['key'] + 1;
+$sql = "SELECT * FROM bread WHERE id = '$num'";
 $result = mysqli_query($conn, $sql);
-$reggae = mysqli_fetch_all($result, MYSQLI_ASSOC);
+$bread = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+$_SESSION["cart"] = array();
+foreach ($bread as $array) {
+    $_SESSION["cart"] = array_merge($_SESSION['cart'], $bread);
+}
+$array = array();
+$cart = array_merge($array, $bread);
+print_r($_SESSION["cart"]);
+
 // while ($reggae = mysqli_fetch_array($result)){
 //     echo $reggae['song_id']. "\n";
 // };
-
 // print_r($reggae);
-foreach ($reggae as $val){
-    // foreach ($val as $name => $value){
-    //     echo $name. " is " .$value. "\n"; 
-            echo '<tr><td>' . $val['song_id']. '</td><td>' . $val['song_name'] . '</td><td>' . $val['artist'] . '</td><td>' . $val['rating'] . '</td><td><input type="submit" name="remove" value="-"></td><td><input type="submit" name="add" value="+"></td></tr>';
-            echo "\n";
-    }
+// new $bread() = $bread;
+// foreach ($cart as $bread){
+    foreach ($bread as $val){
+        //     echo $name. " is " .$value. "\n"; 
+            echo '<tr><td>' . $val['id']. '</td><td>' . $val['name'] . '</td><td>' . $val['price'] . '</td><td>' . count($bread) . '</td><td><input type="submit" name="remove" value="-"></td><td><input type="submit" name="add" value="+"></td></tr>';
+            echo "<br>";
+            $_SESSION['product'] = $bread;
+    }}
 // }
-mysqli_free_result($result);
-mysqli_close($conn);
+// foreach ($bread as $val){
+//     //     echo $name. " is " .$value. "\n"; 
+//         echo '<tr><td>' . $val['id']. '</td><td>' . $val['name'] . '</td><td>' . $val['price'] . '</td><td>' . count($bread) . '</td><td><input type="submit" name="remove" value="-"></td><td><input type="submit" name="add" value="+"></td></tr>';
+//         echo "<br>";
+//         $_SESSION['product'] = $bread;
+// }}
+
 ?>
 </table>
-    
-</table>
+ <?php
+//  mysqli_free_result($result);
+//  mysqli_close($conn);
+?>    
 </body>
 </html>

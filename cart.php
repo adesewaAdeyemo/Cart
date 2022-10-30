@@ -1,5 +1,6 @@
 <?php
     session_start();
+    // $_SESSION["cart"] = array();
 
     class product {
         public $item;
@@ -148,11 +149,11 @@
         'name' => 'Bun Bread',
         'price' => '850',
         'quantity' => '10',
-        'supply' => '2'
+        'supply' => '1'
         ],
         [
             'name' => 'Package',
-            'price' => '-',
+            'price' => '000',
             'quantity' => '-',
             'supply' => '-'
             ]
@@ -172,107 +173,111 @@
     //     $_SESSION['key']= 2;
     // }
     if(isset($_POST['white'])){
-        $_key= 0;// get id of a button in php
-        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
-        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
-        $_SESSION['qtty'] = $_SESSION['bread'][$_key]['supply'];
+        $_SESSION['key']= 0;// get id of a button in php
+        $_SESSION['product'] =  $_SESSION['bread'][$_SESSION['key']]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_SESSION['key']]['price'];
+        $_SESSION['qtty'] = $_SESSION['bread'][$_SESSION['key']]['supply'];
     }elseif(isset($_POST['browny'])){
-        $_key= 1;
-        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
-        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
-        $_SESSION['qtty'] = $_SESSION['bread'][$_key]['supply'];
+        $_SESSION['key']= 1;
+        $_SESSION['product'] =  $_SESSION['bread'][$_SESSION['key']]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_SESSION['key']]['price'];
+        $_SESSION['qtty'] = $_SESSION['bread'][$_SESSION['key']]['supply'];
     }elseif(isset($_POST['coconut'])){
-        $_key= 2;
-        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
-        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
-        $_SESSION['qtty'] = $_SESSION['bread'][$_key]['supply'];
+        $_SESSION['key']= 2;
+        $_SESSION['product'] =  $_SESSION['bread'][$_SESSION['key']]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_SESSION['key']]['price'];
+        $_SESSION['qtty'] = $_SESSION['bread'][$_SESSION['key']]['supply'];
     }elseif(isset($_POST['banana'])){
-        $_key= 3;
-        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
-        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
-        $_SESSION['qtty'] = $_SESSION['bread'][$_key]['supply'];
+        $_SESSION['key']= 3;
+        $_SESSION['product'] =  $_SESSION['bread'][$_SESSION['key']]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_SESSION['key']]['price'];
+        $_SESSION['qtty'] = $_SESSION['bread'][$_SESSION['key']]['supply'];
     }elseif(isset($_POST['cube'])){
-        $_key= 4;
-        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
-        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
-        $_SESSION['qtty'] = $_SESSION['bread'][$_key]['supply'];
+        $_SESSION['key']= 4;
+        $_SESSION['product'] =  $_SESSION['bread'][$_SESSION['key']]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_SESSION['key']]['price'];
+        $_SESSION['qtty'] = $_SESSION['bread'][$_SESSION['key']]['supply'];
     }elseif(isset($_POST['cheesy'])){
-        $_key= 5;
-        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
-        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
-        $_SESSION['qtty'] = $_SESSION['bread'][$_key]['supply'];
+        $_SESSION['key']= 5;
+        $_SESSION['product'] =  $_SESSION['bread'][$_SESSION['key']]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_SESSION['key']]['price'];
+        $_SESSION['qtty'] = $_SESSION['bread'][$_SESSION['key']]['supply'];
     }elseif(isset($_POST['chicken'])){
-        $_key= 6;
-        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
-        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
-        $_SESSION['qtty'] = $_SESSION['bread'][$_key]['supply'];
+        $_SESSION['key']= 6;
+        $_SESSION['product'] =  $_SESSION['bread'][$_SESSION['key']]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_SESSION['key']]['price'];
+        $_SESSION['qtty'] = $_SESSION['bread'][$_SESSION['key']]['supply'];
     }elseif(isset($_POST['sadien'])){
-        $_key= 7;
-        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
-        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
-        $_SESSION['qtty'] = $_SESSION['bread'][$_key]['supply'];
+        $_SESSION['key']= 7;
+        $_SESSION['product'] =  $_SESSION['bread'][$_SESSION['key']]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_SESSION['key']]['price'];
+        $_SESSION['qtty'] = $_SESSION['bread'][$_SESSION['key']]['supply'];
     }elseif(isset($_POST['sacarra'])){
-        $_key= 8;
-        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
-        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
-        $_SESSION['qtty'] = $_SESSION['bread'][$_key]['supply'];
+        $_SESSION['key']= 8;
+        $_SESSION['product'] =  $_SESSION['bread'][$_SESSION['key']]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_SESSION['key']]['price'];
+        $_SESSION['qtty'] = $_SESSION['bread'][$_SESSION['key']]['supply'];
     }elseif(isset($_POST['chocolate'])){
-        $_key= 9;
-        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
-        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
-        $_SESSION['qtty'] = $_SESSION['bread'][$_key]['supply'];
+        $_SESSION['key']= 9;
+        $_SESSION['product'] =  $_SESSION['bread'][$_SESSION['key']]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_SESSION['key']]['price'];
+        $_SESSION['qtty'] = $_SESSION['bread'][$_SESSION['key']]['supply'];
     }elseif(isset($_POST['wheat'])){
-        $_key= 10;
-        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
-        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
-        $_SESSION['qtty'] = $_SESSION['bread'][$_key]['supply'];
+        $_SESSION['key']= 10;
+        $_SESSION['product'] =  $_SESSION['bread'][$_SESSION['key']]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_SESSION['key']]['price'];
+        $_SESSION['qtty'] = $_SESSION['bread'][$_SESSION['key']]['supply'];
     }elseif(isset($_POST['olive'])){
-        $_key= 11;
-        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
-        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
-        $_SESSION['qtty'] = $_SESSION['bread'][$_key]['supply'];
+        $_SESSION['key']= 11;
+        $_SESSION['product'] =  $_SESSION['bread'][$_SESSION['key']]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_SESSION['key']]['price'];
+        $_SESSION['qtty'] = $_SESSION['bread'][$_SESSION['key']]['supply'];
     }elseif(isset($_POST['pineapple'])){
-        $_key= 12;
-        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
-        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
-        $_SESSION['qtty'] = $_SESSION['bread'][$_key]['supply'];
+        $_SESSION['key']= 12;
+        $_SESSION['product'] =  $_SESSION['bread'][$_SESSION['key']]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_SESSION['key']]['price'];
+        $_SESSION['qtty'] = $_SESSION['bread'][$_SESSION['key']]['supply'];
     }elseif(isset($_POST['rainbow'])){
-        $_key= 13;
-        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
-        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
-        $_SESSION['qtty'] = $_SESSION['bread'][$_key]['supply'];
+        $_SESSION['key']= 13;
+        $_SESSION['product'] =  $_SESSION['bread'][$_SESSION['key']]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_SESSION['key']]['price'];
+        $_SESSION['qtty'] = $_SESSION['bread'][$_SESSION['key']]['supply'];
     }elseif(isset($_POST['apple'])){
-        $_key= 14;
-        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
-        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
-        $_SESSION['qtty'] = $_SESSION['bread'][$_key]['supply'];
+        $_SESSION['key']= 14;
+        $_SESSION['product'] =  $_SESSION['bread'][$_SESSION['key']]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_SESSION['key']]['price'];
+        $_SESSION['qtty'] = $_SESSION['bread'][$_SESSION['key']]['supply'];
     }elseif(isset($_POST['peanut'])){
-        $_key= 15;
-        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
-        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
-        $_SESSION['qtty'] = $_SESSION['bread'][$_key]['supply'];
+        $_SESSION['key']= 15;
+        $_SESSION['product'] =  $_SESSION['bread'][$_SESSION['key']]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_SESSION['key']]['price'];
+        $_SESSION['qtty'] = $_SESSION['bread'][$_SESSION['key']]['supply'];
     }elseif(isset($_POST['hot'])){
-        $_key= 16;
-        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
-        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
-        $_SESSION['qtty'] = $_SESSION['bread'][$_key]['supply'];
+        $_SESSION['key']= 16;
+        $_SESSION['product'] =  $_SESSION['bread'][$_SESSION['key']]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_SESSION['key']]['price'];
+        $_SESSION['qtty'] = $_SESSION['bread'][$_SESSION['key']]['supply'];
     }elseif(isset($_POST['vanilla'])){
-        $_key= 17;
-        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
-        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
-        $_SESSION['qtty'] = $_SESSION['bread'][$_key]['supply'];
+        $_SESSION['key']= 17;
+        $_SESSION['product'] =  $_SESSION['bread'][$_SESSION['key']]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_SESSION['key']]['price'];
+        $_SESSION['qtty'] = $_SESSION['bread'][$_SESSION['key']]['supply'];
     }elseif(isset($_POST['weed'])){
-        $_key= 18;
-        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
-        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
-        $_SESSION['qtty'] = $_SESSION['bread'][$_key]['supply'];
+        $_SESSION['key']= 18;
+        $_SESSION['product'] =  $_SESSION['bread'][$_SESSION['key']]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_SESSION['key']]['price'];
+        $_SESSION['qtty'] = $_SESSION['bread'][$_SESSION['key']]['supply'];
+    }elseif(isset($_POST['bun'])){
+        $_SESSION['key']= 19;
+        $_SESSION['product'] =  $_SESSION['bread'][$_SESSION['key']]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_SESSION['key']]['price'];
+        $_SESSION['qtty'] = $_SESSION['bread'][$_SESSION['key']]['supply'];
     }else{
-        $_key= 19;
-        $_SESSION['product'] =  $_SESSION['bread'][$_key]['name'];
-        $_SESSION['productPrice'] =  $_SESSION['bread'][$_key]['price'];
-        $_SESSION['qtty'] = $_SESSION['bread'][$_key]['supply'];
+        $_SESSION['key']= '20';
+        $_SESSION['product'] =  $_SESSION['bread'][$_SESSION['key']]['name'];
+        $_SESSION['productPrice'] =  $_SESSION['bread'][$_SESSION['key']]['price'];
+        $_SESSION['qtty'] = $_SESSION['bread'][$_SESSION['key']]['supply'];
     }
-
     function increment(){
         $_SESSION['count'] += 1;
     }
@@ -280,11 +285,17 @@
     $_SESSION['selected'] = array($_SESSION['product'] => array($_SESSION['productPrice'], $_SESSION['qtty']));
     // $_SESSION['selected'] = array($_SESSION['selecteed'] => $_SESSION['qtty']);
     // $_SESSION["cart"] = array();
-    // unset($_SESSION["cart"]);
+        //new item selected
+    if(!isset($_SESSION['cart'])) {
+        $_SESSION['cart'] = array();
+    }
+ // unset($_SESSION["cart"]);
     // foreach ($_SESSION['selected'] as $array) {
     //     $_SESSION["cart"] = array_merge($_SESSION['cart'], $_SESSION["selected"]);
     //      }
     $_SESSION["cart"] = array_merge($_SESSION['cart'], $_SESSION["selected"]);
+    // $_SESSION["cart"] += $_SESSION["selected"];
+
     // $_SESSION["cart"] = array_push($_SESSION['cart'], $_SESSION["selected"]);
 
     // $_SESSION["selected"] = array_merge($_SESSION['cart'], $_SESSION["selected"]);
@@ -295,7 +306,6 @@
     //         echo $bread => $price;
     //     }
                 // $_SESSION['product'] =  $_SESSION['selected'][$_SESSION['bread'][$_key]['name']];
-    // $_SESSION['key'] = $_key;
 
     // do{
     //     $_SESSION['count'] += 1;
@@ -305,13 +315,13 @@
     // foreach ($_SESSION['bread'] as $bread) {
         // echo "$bread <br>";
     //   }
-    // $_SESSION['i'] = 0;
-    // do
-    // {
-    //     echo $_SESSION['bread']$_SESSION['i']."\n";
-    //     $i++;
-    // }
-    // while($_SESSION['i'] < count($_SESSION['bread']));
+            // $_SESSION['i'] = 0;
+            // do
+            // {
+            //     echo $_SESSION['bread']$_SESSION['i']."\n";
+            //     $i++;
+            // }
+            // while($_SESSION['i'] < count($_SESSION['bread']));
     if (isset($_POST['submit'])){
         header("location: counter.php");
         exit;
@@ -339,7 +349,6 @@
                     <img src="images/e.png" alt=""><h1>Chef</h1>
                     <button type='submit' name='submit'><img src="images/grocery-cart.png" alt=""></button>
                     <span class="add"><?php echo (count($_SESSION['cart'])); ?></span>
-                    <!-- <span class="add"><?php echo ((count($_SESSION['selected'])/3)-1); ?></span> -->
                 </div>
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -355,10 +364,10 @@
             </div>
 
             <span class="d-flex">
-                <input class="form-control me-2" type="text" placeholder="Search">
+                <input class="form-control me-3" type="text" placeholder="Search">
                 <button class="btn" type="button">Search</button>
             </span>
-        
+
         </nav>
         <div class="container">
             <div class="d-flex justify-content-between mb-2">
