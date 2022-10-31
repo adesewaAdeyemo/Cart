@@ -272,7 +272,8 @@
         $_SESSION['product'] =  $_SESSION['bread'][$_SESSION['key']]['name'];
         $_SESSION['productPrice'] =  $_SESSION['bread'][$_SESSION['key']]['price'];
         $_SESSION['qtty'] = $_SESSION['bread'][$_SESSION['key']]['supply'];
-    }else{
+    }
+    else{
         $_SESSION['key']= '20';
         $_SESSION['product'] =  $_SESSION['bread'][$_SESSION['key']]['name'];
         $_SESSION['productPrice'] =  $_SESSION['bread'][$_SESSION['key']]['price'];
@@ -287,7 +288,7 @@
     // $_SESSION["cart"] = array();
         //new item selected
     if(!isset($_SESSION['cart'])) {
-        $_SESSION['cart'] = array();
+        $_SESSION['cart'] = $_SESSION['selected'];
     }
  // unset($_SESSION["cart"]);
     // foreach ($_SESSION['selected'] as $array) {
@@ -327,7 +328,6 @@
         exit;
     }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -335,6 +335,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <?php
+    if (isset($_SESSION["mode"])){
+        if ($_SESSION["mode"] == "light"){ ?>
+        <link rel="stylesheet" href="style/light.css">
+        <?php 
+        }else {?>
+            <link rel="stylesheet" href="style/dark.css">
+        <?php 
+        }
+    }else {?>
+    <link rel='stylesheet' href='style/cart.css'>
+    <?php 
+    }
+    ?>
     <link rel="stylesheet" href="style/cart.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -348,7 +362,7 @@
                 <div class="logo">
                     <img src="images/e.png" alt=""><h1>Chef</h1>
                     <button type='submit' name='submit'><img src="images/grocery-cart.png" alt=""></button>
-                    <span class="add"><?php echo (count($_SESSION['cart'])); ?></span>
+                    <span class="add"><?php echo ((count($_SESSION['cart']))); ?></span>
                 </div>
             <ul class="navbar-nav">
                 <li class="nav-item">
