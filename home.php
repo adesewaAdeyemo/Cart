@@ -11,37 +11,50 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel='stylesheet' href='style/calc.css'>
-    <style>
-    </style>
 </head>
 <body>
     <div class="container2">
         <video autoplay muted loop id="myVideo">
             <source src="images/creative video.mp4" type="video/mp4">
-          </video>          
+        </video>          
         <form action="home.php" method="POST" id="homeForm">
-            <h1>Monk Calculator</h1>
-            <h2>you really want to calculate?</h2>
-            <label>Nickname</label><input type="text" name="uid" required>
+            <h1>Monk Concept</h1>
+            <h2>You are welcome back to E-Bakery...</h2>
+            <label for="uid">Nickname</label><input type="text" name="uid" required>
             <label>Prefered mode</label>
             <input type="radio" name="mode" value="light" required>Light 
             <input type="radio" name="mode" value="dark" required>Dark
             <label>would you like to explore now ?</label>
             <input type="radio" name="explore" value="yes">Yes
             <input type="radio" name="explore" value="no">No
-            <input type="submit" name="explore" value="Explore" >
+            <input type="submit" id="explore" name="explore" value="Explore" >
         </form>
+
+        <!-- <div class="iform">
+        </div> -->
         <?php
             $defaultMode;
             if (isset($_POST["explore"])){
                 $_SESSION["uid"]= isset($_POST["uid"]) ? $_POST["uid"] : $defaultName;
                 $_SESSION["mode"] = isset($_POST["mode"]) ? $_POST["mode"] : $defaultMode;
-                // location.href="calculator.php";
                 header("Location: cart.php");
                 exit;
             }
-
         ?>
     </div>
+    <!-- <script>
+        count = 0;
+        let explore = document.getElementById('explore');
+        let iform = document.getElementById('iform');
+        explore.addEventListener('click', show);
+        function show(){
+            count += 1;
+            if (count%2 != 0){
+                iform.style.display = 'block';
+            }else{
+                iform.style.display = 'none';
+            }
+        }
+    </script> -->
 </body>
 </html>

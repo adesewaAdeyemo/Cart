@@ -3,13 +3,16 @@ function logSubmit(event) {
     event.preventDefault();
     formPage.style.display = 'none';
   }
-      
+ 
 const form = document.getElementById('form');
 const log = document.getElementById('log');
 const formPage = document.getElementById('formPage');
 form.addEventListener('submit', logSubmit);
 
 
+function preventdefault(e){
+  e.preventdefault();
+}
 
 
 

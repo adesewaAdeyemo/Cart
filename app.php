@@ -12,7 +12,7 @@
     <div class="user">
         <form class='userForm' method="POST" action="app.php" onsubmit="return validate()">
         <div class="header">
-            <h1 class='data'>Data<h1><h1 class='mellon'>mellon</h2>
+            <h1 class='data'>E<h1><h1 class='mellon'>Bakery</h2>
         </div>
         <h1>Log in</h1>
         <p>Welcome to Datamellon, please put your login credentials below to start using the app</p>

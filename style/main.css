@@ -1,8 +1,9 @@
 *{
     border: 0;
+    padding: 0%;
 }
 body{
-    background-color: rgb(237, 234, 234);
+    background-color: transparent;
 }
 .header{
     text-align: center;
@@ -17,7 +18,7 @@ body{
     font-weight: 500;
 }
 .header .mellon{
-    color: rgb(42, 176, 42);
+    color: rgb(93, 61, 20);
     box-shadow: 1px 1px 1px rgb(191, 188, 188);
 }
 .user{
@@ -27,21 +28,21 @@ body{
     padding: 1% 10%;
     background-color: #fff;
     border-radius: 10px;
-    border-top: 10px solid rgb(161, 158, 158);
+    border-top: 10px solid rgb(118, 112, 104);
     box-shadow: 2px 2px 2px rgb(222, 222, 222);
 }
 .userForm input{
     border: 1px solid rgb(210, 208, 208);
 }
 .userForm input:hover{
-    outline: 1px solid purple;
+    outline: 1px solid rgb(93, 61, 20);
 }
 .log{
-    color: purple;
+    color: rgb(93, 61, 20);
     display: flex;
 }
 .log input[type='submit']{
-    background-color: purple;
+    background-color: rgb(93, 61, 20);
     color: #fff;
     box-shadow: 1px 1px 1px rgb(32, 28, 32);
     border: transparent;
@@ -49,7 +50,7 @@ body{
 }
 .forget{
     float: right;
-    color: purple;
+    color: rgb(93, 61, 20);
     text-decoration: none;
 }
 h6{
@@ -57,7 +58,7 @@ h6{
 }
 h6 a{
     text-decoration:none;
-    color: purple;
+    color: rgb(93, 61, 20);
 }
 .userEmail, .userPassword{
     padding: 10px;

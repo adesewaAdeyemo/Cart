@@ -154,8 +154,8 @@
         [
             'name' => 'Package',
             'price' => '000',
-            'quantity' => '-',
-            'supply' => '-'
+            'quantity' => '0',
+            'supply' => '0'
             ]
     
         ];
@@ -177,6 +177,7 @@
         $_SESSION['product'] =  $_SESSION['bread'][$_SESSION['key']]['name'];
         $_SESSION['productPrice'] =  $_SESSION['bread'][$_SESSION['key']]['price'];
         $_SESSION['qtty'] = $_SESSION['bread'][$_SESSION['key']]['supply'];
+    
     }elseif(isset($_POST['browny'])){
         $_SESSION['key']= 1;
         $_SESSION['product'] =  $_SESSION['bread'][$_SESSION['key']]['name'];
@@ -282,8 +283,12 @@
     function increment(){
         $_SESSION['count'] += 1;
     }
+    $_SESSION['remove'] = '-';
+    $_SESSION['add'] = '+';
     // $_SESSION['selected'] = array($_SESSION['product'], $_SESSION['productPrice'], $_SESSION['qtty']);
-    $_SESSION['selected'] = array($_SESSION['product'] => array($_SESSION['productPrice'], $_SESSION['qtty']));
+    $_SESSION['selected'] = array($_SESSION['product'] => array($_SESSION['productPrice'] => array($_SESSION['qtty'], $_SESSION['remove'], $_SESSION['add'])));
+    // $_SESSION['selected'] = array($_SESSION['product'], $_SESSION['productPrice'], $_SESSION['qtty'], $_SESSION['remove'], $_SESSION['add']);
+    // $_SESSION['selected'] = array($_SESSION['product'] => array($_SESSION['productPrice'], $_SESSION['qtty']);
     // $_SESSION['selected'] = array($_SESSION['selecteed'] => $_SESSION['qtty']);
     // $_SESSION["cart"] = array();
         //new item selected
@@ -294,8 +299,8 @@
     // foreach ($_SESSION['selected'] as $array) {
     //     $_SESSION["cart"] = array_merge($_SESSION['cart'], $_SESSION["selected"]);
     //      }
-    $_SESSION["cart"] = array_merge($_SESSION['cart'], $_SESSION["selected"]);
-    // $_SESSION["cart"] += $_SESSION["selected"];
+    $_SESSION["cart"] += array_merge($_SESSION['cart'], $_SESSION["selected"]);
+    // $_SESSION['cart'] += $_SESSION['selected'];
 
     // $_SESSION["cart"] = array_push($_SESSION['cart'], $_SESSION["selected"]);
 
@@ -362,24 +367,30 @@
                 <div class="logo">
                     <img src="images/e.png" alt=""><h1>Chef</h1>
                     <button type='submit' name='submit'><img src="images/grocery-cart.png" alt=""></button>
-                    <span class="add"><?php echo ((count($_SESSION['cart']))); ?></span>
+                    <span class="add"><?php echo ((count($_SESSION['cart'])) - 1); ?></span>
                 </div>
             <ul class="navbar-nav">
                 <li class="nav-item">
                 <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">About Us</a>
+                <a class="nav-link" href="conn.php">About Us</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Product</a>
+                <a class="nav-link" id="product" href="#">Product</a>
+                <ul class="prodUl"> 
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                </ul>
                 </li>
             </ul>
             </div>
 
             <span class="d-flex">
-                <input class="form-control me-3" type="text" placeholder="Search">
-                <button class="btn" type="button">Search</button>
+                <input class="form-control me-3" id="searchbar" onkeyup="search()" type="text" placeholder="Search">
+                <button class="btn" type="button" id="searchbtn">Search</button>
             </span>
 
         </nav>
@@ -516,7 +527,64 @@
             </div>
         </div>
     </form>
+<script>
+    function search() {
+        let input = document.getElementById('searchbar').value
+        input=input.toLowerCase();
+        let card = document.getElementsByClassName('card-title');
+        
+        for (i = 0; i < card.length; i++) {
+            if (!card[i].innerHTML.toLowerCase().includes(input)) {
+                card[i].style.backgroundColor="#000";				
+            }
+            else {
+                card[i].style.backgroundColor="burlywood";				
+            }
+        }
+    }
 
+    let searchbtn = document.querySelector('#searchbtn');
+    searchbtn.addEventListener('click', scroll);
+    function scroll(){
+        let input = document.getElementById('searchbar').value
+        input=input.toLowerCase();
+        let card = document.getElementsByClassName('card-title');
+
+        for (i = 0; i < card.length; i++) {
+            if (card[i].innerHTML.toLowerCase().includes(input)) {
+                card[i].style.backgroundColor="burlywood";
+                card[i].scrollIntoViewIfNeeded();				
+            }
+        }
+    }
+
+    let product = document.querySelector('#product');
+    let prodUl = document.querySelector('.prodUl');
+    var count = 0;
+    product.addEventListener('click', prodList)
+    function prodList(e){
+        e.preventDefault();
+        count+=1;
+        console.log(count);
+        if (count%2 != 0){
+            prodUl.style.display = 'block';
+            let ul = document.querySelector('.prodUl');
+            ul.firstElementChild.textContent='Select Product';
+            ul.children[1].textContent='Bread';
+            ul.children[2].textContent='Cake';
+            ul.lastElementChild.textContent='Margarines';
+        }else{
+            prodUl.style.display = 'none';
+        }
+    }
+
+
+    // let btn = document.querySelector('form');
+    // btn.addEventListener('submit', function(e){
+    //     e.preventDefault();
+    // })
+
+</script>
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script src='cart.js'></script>

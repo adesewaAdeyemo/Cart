@@ -8,13 +8,13 @@
 </head>
 <body>
     
-        <table class="card reggae">
+        <!-- <table class="card reggae">
             <tr>
                 <td>product id</td>
                 <td>product name</td>
                 <td>Price</td>
                 <td>quantity</td>
-            </tr>
+            </tr> -->
 <?php
 session_start();
 $conn = mysqli_connect('localhost', 'root', '', 'songs');
@@ -23,6 +23,25 @@ if (!$conn){
 }else{
     echo 'connect successfully!';
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // $num = $_SESSION['key'];
 if (isset($_POST)){
 $num = $_SESSION['key'] + 1;
@@ -58,7 +77,7 @@ print_r($_SESSION["cart"]);
 //         $_SESSION['product'] = $bread;
 // }}
 
-?>
+// ?>
 </table>
  <?php
 //  mysqli_free_result($result);
